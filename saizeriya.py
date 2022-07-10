@@ -40,7 +40,7 @@ def decompile(in_txt: str):
 
 def main():
     psr = argparse.ArgumentParser()
-    psr.add_argument('-a', '--all', help="print all menu")
+    # psr.add_argument('-a', '--all', help="print all menu")
     psr.add_argument('-c', '--compile', default="", help="convert menu to menu code")
     psr.add_argument('-d', '--decompile', default="", help="convert menu code to menu")
     args = psr.parse_args()
