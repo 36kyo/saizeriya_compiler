@@ -10,6 +10,16 @@ def printallmenu():
     with open(menufilepath, encoding='utf-8', mode='r') as f:
         print(f.read())
 
+# 部分的な置換を避ける為に、
+# 置換の前にメニューリストを、メニュー名が長い順にソートする
+# 例
+# ---
+# AA20,バッファローモッツァレラ
+# AA70,バッファローモッツァレラWサイズ
+# ---
+# OK : バッファローモッツァレラWサイズ > AA70
+# NG : バッファローモッツァレラWサイズ > AA20Wサイズ
+
 def convert(in_txt: str, iscompile: bool):
     with open(menufilepath, encoding='utf-8', mode='r') as f:
         menulist = csv.reader(f, delimiter=',')
