@@ -31,6 +31,11 @@ def convert(in_txt: str, iscompile: bool):
         # print(menulistsorted)
 
         out_txt = in_txt
+
+        # 半角全角表記ゆれ対策
+        # 半角に統一する
+        out_txt = out_txt.replace("（", "(").replace("）", ")")
+        out_txt = out_txt.replace("＆", "&")
         if iscompile:
             for i in range(len(menulistsorted)):
                 out_txt = out_txt.replace(menulistsorted[i][1], menulistsorted[i][0])
